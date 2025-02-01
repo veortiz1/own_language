@@ -17,6 +17,19 @@ std::string manage_input(std::string input){
 }
 
 
+std::string method;
+for(char c: tokens[0]){
+   method = method + static_cast<char>(std::toupper(c));
+
+}
+
+if(method=="DELETE"){
+    std::cout<<"delete!!!!";
+}
+
+
+
+
 
     
 

@@ -4,8 +4,10 @@
 #include <string>
 
 
+
 std::string manage_input(std::string input);
 
+void delete_function();
 
 
 #endif

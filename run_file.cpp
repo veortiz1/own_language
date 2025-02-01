@@ -8,7 +8,7 @@
 int main(){
 
 
-    manage_input("delete something");
+    manage_input("delete column");
 
 
 

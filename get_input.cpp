@@ -9,10 +9,17 @@
 
 void delete_function(std::vector <std::string> tokens){
     std::cout<<"in delete function!";
-    std::string token_1=to_uppercase(token_1);
+    std::string token_1=to_uppercase(tokens[1]);
+    std::string token_2=tokens[2];
+
+    
 
     if(token_1=="COLUMN"){
         std::cout<<"column!!!!";
+        
+    }
+    else{
+        std::cout<<"nahhhj";
     }
     
 

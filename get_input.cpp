@@ -34,9 +34,39 @@ public:
     }
     void delete_column()
     {
+        vector<string> temp_file_lines;
 
-        for (int i = 0; file_lines.size(); i++)
+        for (int i = 0; i < file_lines.size(); i++)
         {
+            string row = file_lines[i];
+            istringstream ss(row);
+            string token;
+            int counter = 0;
+            string temp_line="";
+            while (getline(ss, token, ','))
+            {
+                if (counter == delete_index)
+                {
+                   
+                }
+                else
+                {
+                    temp_line = temp_line + token + ",";
+                }
+
+                counter = counter + 1;
+            }
+            temp_line.pop_back();
+            temp_file_lines.push_back(temp_line);
+        }
+        file_lines=temp_file_lines;
+    }
+    void print_file()
+    {
+        for (int i = 0; i < file_lines.size(); i++)
+        {
+            cout << file_lines[i];
+            cout << "\n";
         }
     }
 };
@@ -65,7 +95,9 @@ string manage_input(string input)
         if (row_or_column == "COLUMN")
         {
             my_csv.set_delete_index(tokens[2]);
-            cout << to_string(my_csv.delete_index);
+            my_csv.delete_column();
+            my_csv.print_file();
+            update_file(my_csv.file_lines);
         }
     }
 

@@ -18,3 +18,16 @@ vector<string> create_file(){
     
 
 }
+
+void update_file(vector <string> new_lines){
+    ofstream outFile("file.csv", ios::trunc);
+    
+
+    for(int i=0;i<new_lines.size();i++){
+        outFile << new_lines[i] << endl;
+    }
+
+    outFile.close();
+
+
+}
